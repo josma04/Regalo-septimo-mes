@@ -1,0 +1,1455 @@
+/* Estrellas de fondo */
+#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    background: #d3a0ff;;
+    border-radius: 50%;
+    animation: twinkle var(--duration) infinite;
+}
+
+canvas#heart {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Timer Container */
+.timer-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid   #d3a0ff;;
+    box-shadow: 0 0 20px #d3a0ff;;
+    text-align: center;
+    z-index: 3;
+    backdrop-filter: blur(5px);
+}
+
+.timer-container h3 {
+    font-family: 'Great Vibes', cursive;
+    color: #d3a0ff;
+    margin: 0 0 1.5rem 0;
+    font-size: 2rem;
+    text-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+}
+
+.timer {
+    display: flex;
+    gap: 2rem;
+    color: #d3a0ff;;
+}
+
+.time-unit {
+    text-align: center;
+}
+
+.time-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: #d3a0ff;
+    text-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+}
+
+.time-label {
+    font-size: 0.9rem;
+    color: #d3a0ff;;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Animaciones */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+
+.animated-header {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 40px;
+    overflow: visible;
+    z-index: 4;
+    background: transparent;
+    transform: translate(-50%, -50%);
+    animation: pulseECG 1s ease-in-out infinite; /* Añadimos la animación de pulso */
+}
+
+@keyframes pulseECG {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1); /* Se agranda */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.svg-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 100%;
+    transform: translate(-50%, -50%); /* Centrar el contenedor SVG */
+}
+
+/* Ajustar el SVG dentro del contenedor */
+.svg-container svg {
+    width: 50%;
+    height: 100%;
+    overflow: visible;
+    float: left;
+}
+
+.animated-header svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Estilos para el timer reposicionado */
+.timer-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transform: scale(0.8); /* Hace el contador más pequeño */
+    transform-origin: bottom right;
+}
+
+/* Animaciones del SVG */
+svg path#line {
+    fill: none;
+    stroke: #d3a0ff;;
+    stroke-width: 3; /* Línea más gruesa */
+    stroke-linecap: round; /* Extremos redondeados */
+    stroke-linejoin: round;
+    stroke-miterlimit: 4;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    filter: drop-shadow(0 0 2px rgba(255, 0, 0, 0.659)); /* Añadir brillo */
+    animation: dash 4s linear infinite;
+}
+
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 1;
+    }
+    80% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    60% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    70% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    75% {
+        opacity: 1;
+        transform: scale(1.0);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    85% {
+        opacity: 1;
+        transform: scale(1.0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.0);
+    }
+}
+
+/* Mensaje de regalos */
+.gifts-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #d3a0ff;
+    text-shadow: 0 0 10px rgba(211, 160, 255, 0.5);
+    z-index: 5;
+    animation: floatMessage 3s ease-in-out infinite, appearMessage 1s ease-out;
+}
+
+/* Contenedor de regalos */
+.gifts-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 4;
+}
+
+/* Posicionamiento individual de regalos */
+.gift-1 {
+    top: 30%;
+    left: 20%;
+}
+
+.gift-2 {
+    top: 30%;
+    right: 20%;
+}
+
+.gift-3 {
+    bottom: 30%;
+    left: 20%;
+}
+
+.gift-4 {
+    bottom: 30%;
+    right: 20%;
+}
+
+/* Media queries para asegurar visibilidad en diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+    .gift-1 {
+        top: 25%;
+        left: 10%;
+    }
+    
+    .gift-2 {
+        top: 25%;
+        right: 10%;
+    }
+    
+    .gift-3 {
+        bottom: 25%;
+        left: 10%;
+    }
+    
+    .gift-4 {
+        bottom: 25%;
+        right: 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    .gift {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .gift-1 {
+        top: 20%;
+        left: 5%;
+    }
+    
+    .gift-2 {
+        top: 20%;
+        right: 5%;
+    }
+    
+    .gift-3 {
+        bottom: 20%;
+        left: 5%;
+    }
+    
+    .gift-4 {
+        bottom: 20%;
+        right: 5%;
+    }
+}
+
+/* Ajuste del número dentro del regalo para pantallas pequeñas */
+@media (max-width: 480px) {
+    .gift-number {
+        font-size: 1.5rem;
+    }
+}
+
+/* Estilos del regalo */
+.gift {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    pointer-events: auto;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    animation: floatGift 4s ease-in-out infinite;
+}
+
+
+.gift-1 .gift-base {
+    background: #FFB6C1; /* Rosa claro suave */
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+}
+.gift-1 .gift-lid,
+.gift-1 .gift-ribbon {
+    background: #FF69B4; /* Rosa hot pink */
+}
+
+.gift-3 .gift-base {
+    background: #E6E6FA; /* Lavanda suave */
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+}
+.gift-3 .gift-lid,
+.gift-3 .gift-ribbon {
+    background: #9370DB; /* Púrpura medio */
+}
+
+.gift-4 .gift-base {
+    background: #FFDAB9; /* Melocotón suave */
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+}
+.gift-4 .gift-lid,
+.gift-4 .gift-ribbon {
+    background: #FF8C69; /* Coral romántico */
+}
+
+
+.gift-2 .gift-base {
+    background: #FFE4E1; /* Rosa vintage */
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+}
+.gift-2 .gift-lid,
+.gift-2 .gift-ribbon {
+    background: #E75480; /* Frambuesa */
+}
+
+.gift-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.gift:hover .gift-box {
+    animation: shakeGift 0.5s ease-in-out infinite;
+}
+
+.gift-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.gift:hover .gift-box {
+    animation: shakeGift 0.5s ease-in-out infinite;
+}
+
+.gift-base {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.gift-lid {
+    position: absolute;
+    width: 110%;
+    height: 25px;
+    top: -15px;
+    left: -5%;
+    border-radius: 5px;
+}
+
+.gift-ribbon {
+    position: absolute;
+    width: 20px;
+    height: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20%;
+    border-radius: 5px;
+}
+
+.gift-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgb(83, 80, 87);
+    z-index: 1;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    position: relative;
+    background: #000;
+    margin: 5% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    min-height: 90vh; /* Cambiamos height por min-height */
+    border-radius: 15px;
+    border: 2px solid #d3a0ff;
+    box-shadow: 0 0 30px #d3a0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    margin-bottom: 50px; /* Añadir espacio al final */
+}
+
+.modal-content .envelop {
+    position: relative;
+    width: 25rem;
+    height: 20rem;
+    margin: auto;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px; /* Ajusta según sea necesario */
+    right: 15px; /* Ajusta según sea necesario */
+    font-size: 2rem;
+    color: #e7cbff; /* Color blanco */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background: rgba(0, 0, 0, 0.95); /* Fondo negro */
+    border: 2px solid #b45fff; /* Borde gris */
+    padding: 5px 10px; /* Espaciado alrededor del símbolo */
+    border-radius: 10%; /* Hacerlo circular */
+  }
+  
+  .close-modal:hover {
+    transform: rotate(90deg);
+    background: #666666; /* Cambio de color al pasar el mouse */
+    box-shadow: 0 0 20px #999999; /* Efecto de sombra para resaltarlo */
+  }
+
+  spak {
+    background-color: transparent;
+    font-size: 3vmin;
+    bottom: 0;
+    left: 100px;
+    margin-bottom: 3vmin;
+    display: inline-block;
+    text-align: left;
+    position: absolute;
+    color: #d3a0ff;
+    opacity: 1;
+    font-style: italic;
+    text-shadow: 0 0 5px rgba(211, 160, 255, 0.5);
+    transition: opacity 0.5s ease;
+}
+
+/* Animaciones */
+@keyframes floatMessage {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+@keyframes appearMessage {
+    from { opacity: 0; transform: translateX(-50%) translateY(-30px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes floatGift {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes shakeGift {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+@keyframes openGift {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2) rotate(5deg); }
+    100% { transform: scale(0) rotate(20deg); }
+}
+
+:root {
+    --bg: #000;
+    --tab-bg: #f9f9f9;
+    --f-color: #ba9872;
+    --s-color: #967b5c;
+    --t-color: #a38564;
+    --fo-color: #f9f9f9;
+    --fi-color: #e2e2e2;
+  }
+  
+  /* Estilos generales del sobre */
+  .envelop {
+    position: relative;
+    width: 25rem;
+    height: 20rem;
+    margin: auto;
+    overflow: visible;
+}
+  
+  @media (min-width: 400px) and (max-width: 600px) {
+    .envelop {
+      width: 20rem;
+      height: 15rem;
+    }
+  }
+  
+  @media (min-width: 600px) {
+    .envelop {
+      width: 25rem;
+      height: 20rem;
+    }
+  }
+  
+  @media (min-width: 600px) and (min-height: 600px) {
+    .envelop {
+      bottom: 20%;
+    }
+  }
+  
+  .envelop__front-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 0.7rem;
+    border: 0.35rem solid var(--s-color);
+    background-color: var(--f-color);
+    clip-path: polygon(100% 0%, 50% 70%, 0% 0%, 0% 100%, 100% 100%);
+    z-index: 300;
+  }
+  
+  .envelop__back-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 0.7rem;
+    background-color: var(--s-color);
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 90%);
+    z-index: 100;
+  }
+  
+  .envelop__up-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: relative;
+    border-radius: 0.7rem;
+    background-color: var(--s-color);
+    z-index: 400;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 81%);
+  }
+  
+  .envelop__sticker {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    margin: auto;
+    top: 30%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 400;
+    background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
+    background-color: var(--fo-color);
+    border: 0.3rem solid var(--fi-color);
+    background-size: 2rem;
+    background-position: center;
+  }
+  
+  .envelop__false-sticker {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    margin: auto;
+    top: 30%;
+    left: 80%;
+    bottom: 0;
+    right: 0;
+    z-index: 300;
+    background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
+    background-color: var(--fo-color);
+    border: 0.3rem solid var(--fi-color);
+    background-size: 2rem;
+    background-position: center;
+  }
+  
+  @media (max-width: 400px) {
+    .envelop__sticker,
+    .envelop__false-sticker {
+      background-size: 1.2rem;
+    }
+  }
+  
+  @media (min-width: 600px) {
+    .envelop__sticker,
+    .envelop__false-sticker {
+      height: 15%;
+    }
+  }
+  
+  .envelop__content {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 200;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+/* Add a new class for when envelope is opened */
+.envelop__content--visible {
+    visibility: visible;
+    overflow: visible;
+    height: 100%; /* Mantenemos altura fija */
+}
+  
+.love-notes {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+/* Clase para cuando las notas son visibles */
+.love-notes--visible {
+    overflow: visible;
+}
+
+.note {
+    width: 95%;
+    height: 30%;
+    background-color: var(--tab-bg);
+    position: absolute;
+    overflow: hidden;
+    transition: height 0.5s, opacity 0.25s;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    z-index: 1;
+}
+
+.note:nth-child(1) {
+    bottom: 60%;
+}
+
+.note:nth-child(2) {
+    bottom: 40%;
+}
+
+.note:nth-child(3) {
+    bottom: 20%;
+}
+  
+  .note:hover {
+    cursor: pointer;
+    height: 45%;
+  }
+  
+  .note__text {
+    font-family: "Sofia";
+    padding: 1rem;
+  }
+  
+  .note__text p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  @media (min-width: 300px) and (max-width: 600px) {
+    .note__text p {
+      font-size: 1.025rem;
+    }
+  }
+  
+  @media (min-width: 600px) {
+    .note__text p {
+      font-size: 1.15rem;
+    }
+  }
+  
+  .scissors {
+    cursor: url("https://i.postimg.cc/GtLCdKxR/sisors.png"), pointer;
+  }
+  
+  .scissors:active {
+    cursor: url("https://i.postimg.cc/GtXQ7WPZ/pngwing-com.png"), pointer;
+  }
+  
+  .cursor {
+    cursor: pointer;
+  }
+
+  #giftModal1 .modal-content {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    position: relative;
+}
+  
+  #giftModal1 .close-modal:hover {
+    transform: rotate(90deg);
+    background: #666666; /* Cambio de color al pasar el mouse */
+    box-shadow: 0 0 20px #999999; /* Efecto de sombra para resaltarlo */
+  }
+
+
+#giftModal1 .heart-message-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para el mensaje de corazón */
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
+
+@keyframes throb {
+    0% {
+        transform: scale(1);
+    }
+    35% {
+        transform: scale(1.2);
+    }
+    85% {
+        transform: scale(1);
+    }   
+}
+
+.wrapper {
+    /* Reduced from 90vmin to 67.5vmin (75% of original) */
+    width: 67.5vmin;
+    height: 67.5vmin;
+    position: relative;
+    margin: 5vmin auto;
+}
+
+.throb {
+    animation: throb 1.5s infinite;
+    animation-delay: 0.8s;
+}
+
+#giftModal1 input[type="checkbox"] {
+    display: none;
+}
+
+#giftModal1 input[type="checkbox"] + label {
+    /* Reduced from 30vmin to 22.5vmin */
+    width: 22.5vmin;
+    height: 22.5vmin;
+    line-height: 22.5vmin;
+    display: inline-block;
+    position: absolute;
+    /* Reduced from 15vmin to 11.25vmin */
+    font-size: 11.25vmin;
+    text-align: center;
+    transition: all 1s ease;
+    font-family: 'Shadows Into Light';
+    color: #d3a0ff;
+}
+
+#giftModal1 label {
+    /* Reduced from 3vmin to 2.25vmin */
+    text-shadow: 2.25vmin 2.25vmin 7.5vmin rgba(211, 160, 255, 0.5);
+}
+
+#giftModal1 label:hover {
+    color: #ff0000;
+    cursor: pointer;
+}
+
+#giftModal1 #ck1 + label,
+#giftModal1 #ck2 + label {
+    border-radius: 50%;
+    top: 0;
+}
+
+#giftModal1 #ck1:checked + label,
+#giftModal1 #ck2:checked + label,
+#giftModal1 #ck3:checked + label {
+    background: #ff0000;
+    font-size: 0;
+    transition: all 1s ease;
+}
+
+#giftModal1 #ck1 + label {
+    left: 0;
+}
+
+#giftModal1 #ck2 + label {
+    right: 10vmin;
+}
+
+#giftModal1 #ck1:checked + label,
+#giftModal1 #ck2:checked + label {
+    /* Reduced from 54vmin to 40.5vmin */
+    width: 40.5vmin;
+    height: 40.5vmin;
+    border-radius: 50%;
+    line-height: 40.5vmin;
+}
+
+#giftModal1 #ck2:checked + label {
+    right: 0;
+}
+
+#giftModal1 #ck3 + label {
+    bottom: 5vmin;
+    left: 50%;
+    margin: 0 -9vmin;
+    background-color: transparent;
+}
+
+#giftModal1 #ck3:checked + label {
+    /* Reduced from 49.5vmin to 37.125vmin */
+    width: 37.8vmin;
+    height: 38vmin;
+    /* Adjusted positions proportionally */
+    bottom: 13vmin;
+    left: 24vmin;
+    transform: rotate(44.9deg);
+    line-height: 3.65vmin;
+}
+
+#giftModal1 spam {
+    background-color: transparent;
+    font-size: 3vmin;
+    bottom: 0;
+    left: 0;
+    margin-bottom: -2.25vmin;
+    display: inline-block;
+    text-align: left;
+    position: absolute;
+    color: #d3a0ff;
+    opacity: 1;
+    font-style: italic;
+    text-shadow: 0 0 5px rgba(211, 160, 255, 0.5);
+    transition: opacity 0.5s ease;
+}
+
+#giftModal1 spap {
+    background-color: transparent;
+    font-size: 3vmin;
+    bottom: 0;
+    left: 100px;
+    margin-bottom: 3vmin;
+    display: inline-block;
+    text-align: left;
+    position: absolute;
+    color: #d3a0ff;
+    opacity: 0;
+    font-style: italic;
+    text-shadow: 0 0 5px rgba(211, 160, 255, 0.5);
+    transition: opacity 0.5s ease;
+}
+
+.draggable-cards-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 1000px;
+    background-image: url("https://www.psdgraphics.com/wp-content/uploads/2022/01/white-math-paper-texture.jpg");
+    background-position: center center;
+}
+
+/* Estilos para las tarjetas de papel */
+#giftModal3 .paper {
+    background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
+    background-size: 500px;
+    background-position: center center;
+    padding: 20px 100px;
+    transform: rotateZ(-5deg);
+    box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
+    position: absolute;
+    max-width: 300px;
+}
+
+#giftModal3 .paper.heart {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+#giftModal3 .paper.image {
+    padding: 10px;
+}
+
+#giftModal3 .paper.image p {
+    font-size: 30px;
+    margin: 5px 0;
+}
+
+#giftModal3 img {
+    max-height: 200px;
+    width: 100%;
+    user-select: none;
+    object-fit: cover;
+}
+
+#giftModal3 .paper.heart::after {
+    content: "";
+    background-image: url('https://cdn.pixabay.com/photo/2016/03/31/19/25/cartoon-1294994__340.png');
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: 150px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+
+#giftModal3 p {
+    font-family: 'Zeyada', cursive;
+    font-size: 50px;
+    color: rgb(0,0,100);
+    opacity: 0.75;
+    user-select: none;
+    margin: 0;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    #giftModal3 .paper {
+        padding: 10px 50px;
+        max-width: 200px;
+    }
+    
+    #giftModal3 .paper.heart {
+        width: 150px;
+        height: 150px;
+    }
+    
+    #giftModal3 .paper.image p {
+        font-size: 24px;
+    }
+    
+    #giftModal3 p {
+        font-size: 36px;
+    }
+}
+
+spal {
+    background-color: transparent;
+    font-size: 3vmin;
+    bottom: 0;
+    left: 100px;
+    margin-bottom: 3vmin;
+    display: inline-block;
+    text-align: left;
+    position: absolute;
+    color: #d3a0ff;
+    opacity: 1;
+    font-style: italic;
+    text-shadow: 0 0 5px rgba(211, 160, 255, 0.5);
+    transition: opacity 0.5s ease;
+}
+
+.envelope {
+  content: url(https://assets.codepen.io/4927073/Envelope3.png);
+  width: 430px;
+  position: absolute;
+  left: 18%;
+  top: 3%;
+  filter: drop-shadow(1.5px 0.75px 1.75px #4d4d4d);
+}
+
+.card {
+  position: relative;
+  width: 262px;
+  height: 372px;
+  margin: auto;
+  box-shadow: inset 5px 0px 15px 0px rgba(0, 0, 0, 0.1),
+    3px 0px 3px -2px rgba(0, 0, 0, 0.3);
+  background-color: #d7e5de;
+      transform: scale(1.05);
+  left: 12px;
+}
+
+.front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: -10px 0px 0px -10px;
+    border: 1px solid #d7e5de;
+    backface-visibility: hidden;
+    background-color: #d7e5de;
+    background-size: contain;
+    transform-style: preserve-3d;
+    transform-origin: 0% 50%;
+    transform: perspective(800px) rotateY(0deg);
+    transition: all 1s ease-in-out;
+    filter: saturate(1.125) brightness(1.0125);
+    z-index: 2; /* Asegura que la portada esté por encima */
+}
+
+.card:hover .front {
+    transform: perspective(800px) rotateY(-170deg);
+    background-color: #d7e5de;
+}
+
+.card:hover .back {
+  transform: perspective(800px) rotateY(-170deg);
+  box-shadow: 7px 0px 2px 0px rgba(0, 0, 0, 0.3),
+    inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  background-color: #d7e5de;
+}
+
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -10px 0px 0px -10px;
+  margin: auto;
+  backface-visibility: visible;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.25));
+  box-shadow: inset 5px 0px 15px 0px rgba(0, 0, 0, 0.1),
+    3px 0px 3px 1px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(800px) rotateY(0deg);
+  transition: all 1s ease-in-out;
+  background-color:#d7e5de;
+}
+
+.f-box {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: transparent;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.f-box img {
+  margin-top: 0px;
+  height: 100%;
+  width: auto;
+}
+
+@media (max-width: 675px) {
+  .envelope {
+    width: 380px;
+}
+  
+  .card {
+    height: 330px;
+    width: 230px;
+}
+}
+
+@media (max-width: 675px) {
+    .text-container {
+        padding: 15px;
+    }
+
+    .text-container .special-image {
+        max-width: 70%;
+        margin-bottom: 15px;
+    }
+
+    .love-message {
+        font-size: 0.9rem;
+        margin-top: 15px;
+    }
+}
+
+.text-container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+.card:hover .text-container[data-page="1"] {
+    opacity: 1;
+    pointer-events: auto;
+    display: flex;
+    transition-delay: 0.5s;
+    transform: translateX(0);
+}
+
+.card:hover .text-container.active {
+    opacity: 1;
+    pointer-events: auto;
+    display: flex;
+}
+
+.nav-button {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #666;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 12.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    pointer-events: auto;  /* Asegura que los botones sean clicables */
+}
+
+.nav-button:hover {
+    background: #ffffff;
+    transform: scale(1.1);
+}
+
+.nav-button.prev-button {
+    right: auto;
+    left: 5px;
+}
+
+.nav-button.next-button {
+    right: 5px;
+}
+
+/* Estilos para las páginas */
+.page {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+}
+
+/* Estado activo para cualquier página */
+.page.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    display: flex !important;
+}
+
+/* Animaciones de transición */
+.page-exit {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.page-enter {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.page-exit-reverse {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.page-enter-reverse {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.page[data-page="2"],
+.page[data-page="3"],
+.page[data-page="4"],
+.page[data-page="5"],
+.page[data-page="6"],
+.page[data-page="7"],
+.page[data-page="8"] {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Asegurarse de que las imágenes se muestren correctamente */
+.special-image {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+.page.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    display: flex !important;
+}
+
+.page[data-page="2"] {
+    opacity: 0;
+}
+
+.page[data-page="3"] {
+    opacity: 0;
+}
+
+.page[data-page="4"] {
+    opacity: 0;
+}
+
+.page[data-page="5"] {
+    opacity: 0;
+}
+
+.page[data-page="6"] {
+    opacity: 0;
+}
+.page[data-page="7"] {
+    opacity: 0;
+}
+
+.page[data-page="8"] {
+    opacity: 0;
+}
+
+.text-container.page[data-page="7"] {
+    padding: 10px;
+    justify-content: flex-start;
+}
+
+.text-container .special-image {
+    max-width: 80%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: -10px;
+    margin-top: 30px;
+}
+
+.special-video {
+    width: 90%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px #d7e5de;
+    background-color: transparent; /* Elimina el fondo blanco */
+    filter: none; /* Elimina cualquier filtro que pueda estar afectando */
+    -webkit-filter: none;
+    mix-blend-mode: normal; /* Asegura que no haya mezcla de colores */
+    isolation: isolate; 
+}
+
+/* Asegurarse de que el video se ajuste bien en móviles */
+@media (max-width: 675px) {
+    .video-container {
+        height: 50%;
+    }
+
+    .special-video {
+        width: 95%;
+        max-width: 90%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Estilo para los controles del video */
+.special-video::-webkit-media-controls {
+    display: flex !important;
+    background: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+}
+
+.special-video::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.video-container {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    isolation: isolate;
+    mix-blend-mode: normal;
+}
+
+.love-message {
+    font-style: italic;
+    color: #000000;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0 15px;
+    margin-top: 20px;
+    max-width: 90%;
+}
+
+spaj {
+    background-color: transparent;
+    font-size: 3vmin;
+    bottom: 0;
+    left: 13px;
+    margin-bottom: 3vmin;
+    display: inline-block;
+    text-align: left;
+    position: absolute;
+    color: #d3a0ff;
+    opacity: 0;
+    font-style: italic;
+    text-shadow: 0 0 5px rgba(211, 160, 255, 0.5);
+    transition: opacity 1s ease;
+    pointer-events: none;
+}
+
+spaj.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.shooting-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.shooting-star {
+    position: absolute;
+    left: -100px;
+    top: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, rgb(255, 230, 0) 0%, rgba(255,255,255,0) 100%);
+    width: 100px;
+    animation: shootingStarAnimation 8s ease-in infinite;
+}
+
+.shooting-star:nth-child(1) {
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.shooting-star:nth-child(2) {
+    top: 40%;
+    animation-delay: 2s;
+}
+
+.shooting-star:nth-child(3) {
+    top: 60%;
+    animation-delay: 4s;
+}
+
+.shooting-star:nth-child(4) {
+    top: 80%;
+    animation-delay: 6s;
+}
+
+@keyframes shootingStarAnimation {
+    0% {
+        transform: translateX(0) rotate(-45deg);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    40% {
+        transform: translateX(calc(100vw + 200px)) rotate(-45deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(calc(100vw + 200px)) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+/* Efecto de brillo */
+.shooting-star::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+}
+
+/* Agregar estela */
+.shooting-star::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+}

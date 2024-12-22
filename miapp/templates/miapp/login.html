@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <link type="image/png" sizes="16x16" rel="icon" href="{% static 'miapp/images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'miapp/css/styles_1.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Parisienne&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+</head>
+<body>
+    <div class="night">
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+    </div>
+
+    <div class="mensaje-regalo">¡Da click sobre cada emoji que vez distribuido en la pantalla mi amor!</div>
+
+    <div class="pixel-art-modal" id="pixelArtModal">
+        <div class="pixel-art-content">
+            <div id="pixelArtContainer" class="pixel-art-container">
+                <div class="frame-container">
+                    <div class="vintage-frame">
+                        <canvas id="pixelCanvas" class="pixel-canvas"></canvas>
+                        <div id="frameMessage" class="frame-message"></div>
+                    </div>
+                </div>
+                <div id="pixelMessageContainer" class="pixel-message-container">
+                    <div id="pixelMessage" class="pixel-message"></div>
+                </div>
+            </div>
+            <button class="close-modal" onclick="closePixelArt()">&times;</button>
+        </div>
+    </div>
+    
+    <div class="select-box" id="selectBox">
+        <h2>¿Quién eres?</h2>
+        <div class="buttons">
+            <button class="select-button" onclick="showLogin('marian')">Marián</button>
+            <button class="select-button" onclick="showLogin('mauricio')">Mauricio</button>
+        </div>
+    </div>
+    
+    <div class="login-box" id="loginBox">
+        <h2 id="loginTitle">Iniciar Sesión</h2>
+        <form onsubmit="return validateForm(event)">
+            <div class="user-box">
+                <input type="text" id="username" required>
+                <label>Usuario</label>
+                <div class="hint" id="usernameHint"></div>
+            </div>
+            <div class="user-box">
+                <input type="password" id="password" required>
+                <label>Contraseña</label>
+                <div class="hint" id="passwordHint">¡La contraseña es el día en que tuvimos nuetra primera cita! DD/MM/YEAR</div>
+            </div>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+    
+    <!-- Modal -->
+    <div class="love-modal" id="loveModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img class="modal-image" src="" alt="Momento especial">
+            <div class="modal-text"></div>
+        </div>
+    </div>
+    
+    <script src="{% static 'miapp/js/script_1.js' %}"></script>
+</body>
+</html>

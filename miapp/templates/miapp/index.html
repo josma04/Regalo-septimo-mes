@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Nuestro Tiempo Juntos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Short+Stack&amp;family=Homemade+Apple&amp;display=swap'>
+    <link rel="preconnect" href='https://fonts.googleapis.com/css2?family=Zeyada&display=swap'>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'miapp/css/styles.css' %}">
+</head>
+<body>
+    <canvas id="heart"></canvas>
+
+    <div class="animated-header">
+        <div class="svg-container">
+            <svg xmlns="http://www.w3.org/2000/svg" id="svg5" version="1.1" viewBox="0 0 502.98 108.61">
+                <path id="heart" d="M213.35 29.43c19.41-15.19 33.68 10.86 37.73 18.82-.28-13.61 11.64-40.98 25.94-34.01 32.3 15.74-15.88 83.8-26.4 81.76-13.24-9-51.35-53.3-37.27-66.57Z" 
+                style="fill:rgba(255, 0, 0, 0.659);stroke: #d3a0ff;;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
+                <path pathLength="1" id="line" d="M5.32 78.13c.96-.01 5-8.5 5.54-8.54.58-.05 6.1 8.51 7.1 8.51 3.66 0 9.29.06 10.71.05 2.53-.01 4.82-72.88 4.82-72.88l4.76 97.28
+                3.97-24.45 20.45-.22C64 77.86 77.1 63.66 78.36 63.8c1.31.15 6.68 14.08 7.94 14.07 2.3-.03 33.32.04 35.76.02.96 0 5-8.5 5.53-8.53.59-.05 6.1 8.51 7.1 8.5 3.66 0 
+                9.3.07 10.72.06 2.53-.02 4.81-72.89 4.81-72.89l4.77 97.28 3.97-24.44s83.34-3.33 74.69 7.67c-8.65 11-45.3-42.94-31.65-53.58 25.6-19.96 49.96 36.94 40.26 36.5-12.2-.53 
+                1.8-62.32 23.41-51.7 32.24 15.86-17.56 84.92-26.4 81.77-5.73-2.05-.68-21.68 31.4-26.58 26.65-6.42 29.5 2.35 52.62 7.11 2.53-.02 4.82-72.89 4.82-72.89l4.76 97.28 
+                3.97-24.44 20.45-.22c1.31-.02 14.41-14.22 15.68-14.07 1.32.15 6.7 14.08 7.95 14.07 2.29-.03 33.32.04 35.76.02.95 0 5-8.5 5.53-8.54.58-.04 6.1 8.52 7.1 8.52 3.66 
+                0 9.3.06 10.72.05 2.53-.02 4.81-72.89 4.81-72.89l4.77 97.28 3.97-24.44 20.45-.23c1.31-.01 14.4-14.22 15.68-14.07 1.32.16 6.69 14.09 7.94 14.07 "/>
+            </svg>
+        </div>
+    </div>
+
+    <div id="stars"></div>
+    <div class="shooting-stars">
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+    </div>
+    
+    <div class="timer-container">
+        <h3>Tiempo Amándonos</h3>
+        <div class="timer" id="loveTimer">
+            <div class="time-unit">
+                <p class="time-value" id="days">0</p>
+                <p class="time-label">Días</p>
+            </div>
+            <div class="time-unit">
+                <p class="time-value" id="hours">0</p>
+                <p class="time-label">Horas</p>
+            </div>
+            <div class="time-unit">
+                <p class="time-value" id="minutes">0</p>
+                <p class="time-label">Min</p>
+            </div>
+            <div class="time-unit">
+                <p class="time-value" id="seconds">0</p>
+                <p class="time-label">Seg</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="gifts-message">Tienes 4 regalitos en este sitio. ¡Ábrelos!</div>
+
+    <div class="gifts-container">
+        <div class="gift gift-1">
+            <div class="gift-box">
+                <div class="gift-lid"></div>
+                <div class="gift-base"></div>
+                <div class="gift-ribbon"></div>
+                <div class="gift-number">1</div>
+            </div>
+        </div>
+        
+        <div class="gift gift-2">
+            <div class="gift-box">
+                <div class="gift-lid"></div>
+                <div class="gift-base"></div>
+                <div class="gift-ribbon"></div>
+                <div class="gift-number">2</div>
+            </div>
+        </div>
+        
+        <div class="gift gift-3">
+            <div class="gift-box">
+                <div class="gift-lid"></div>
+                <div class="gift-base"></div>
+                <div class="gift-ribbon"></div>
+                <div class="gift-number">3</div>
+            </div>
+        </div>
+        
+        <div class="gift gift-4">
+            <div class="gift-box">
+                <div class="gift-lid"></div>
+                <div class="gift-base"></div>
+                <div class="gift-ribbon"></div>
+                <div class="gift-number">4</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para el regalo 1 -->
+    <div class="modal" id="giftModal1">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <audio id="backgroundMusi1" src="{% static 'miapp/audios/1.mp3' %}" preload="auto" playsinline webkit-playsinline></audio>
+            <div class="heart-message-container">
+                <form>
+                    <div class="wrapper">
+                        <input type="checkbox" id="ck1" onClick="check()"/>
+                        <label for="ck1">I</label>
+                        <input type="checkbox" id="ck2" onClick="check()"/>
+                        <label for="ck2">Love you</label>
+                        <input type="checkbox" id="ck3" onClick="check()"/>
+                        <label for="ck3">Infinitely</label>
+                        <spam>Click on the words!</spam>
+                    </div>
+                </form>
+            <spap>I love you in english</spap>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para el regalo 2 -->
+    <div class="modal" id="giftModal2">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <audio id="backgroundMusic2" src="{% static 'miapp/audios/2.mp3' %}" preload="auto" playsinline webkit-playsinline></audio>
+            <div class="envelop">
+                <div class="envelop__front-paper"></div>
+                <div class="envelop__back-paper"></div>
+                <div class="envelop__up-paper js-up-paper"></div>
+                <div class="envelop__sticker js-sticker"></div>
+                <div class="envelop__false-sticker"></div>
+                <div class="envelop__content js-envelop-content">
+                    <div class="love-notes">
+                        <div class="note js-note">
+                            <div class="note__text">
+                                <p>
+                                    Olá minha princesa, aqui estamos completando mais um mês juntas, é sempre uma alegria poder acordar e saber que tenho você ao meu lado, e sentir que isso será para sempre é magnífico.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="note js-note">
+                            <div class="note__text">
+                                <p>Quero que nossos sonhos e projetos nunca acabem e que no futuro tenhamos uma vida feliz, cheia de amor, e com a pessoa que amamos desde os 20 anos.</p>
+                            </div>
+                        </div>
+                        <div class="note js-note">
+                            <div class="note__text">
+                                <p>Você é a melhor coisa que já aconteceu comigo, obrigado por me escolher todos os dias.</p>
+                                <p>Eu te amo muito! &hearts;</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <spak>Eu amo-te em português</spak>
+        </div>
+    </div>
+
+    <!-- Modal para el regalo 3 -->
+    <div class="modal" id="giftModal3">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <audio id="backgroundMusic3" src="{% static 'miapp/audios/3.mp3' %}" preload="auto" playsinline webkit-playsinline></audio>
+            <div class="paper heart">
+            </div>
+            <div class="paper image">
+              <p> e mi sono</p>
+                <p>innamorato di te 💑🏽 </p>
+               <img src={% static 'miapp/images/3.png' %}/>
+            </div>
+            <div class="paper image">
+              <p</p>
+              <img src={% static 'miapp/images/2.jpeg' %} />
+            </div>
+            <div class="paper image">
+              <p>Come può qualcuno </p>
+               <p> essere così tagliato ❤️ </p>
+              <img src= {% static 'miapp/images/1.png' %} />
+            </div>
+            <div class="paper red">
+            <p class="p1"> e la mia persona</p>
+            <p class="p2">preferita 😍</p>
+            </div>
+            <div class="paper">
+            <p class="p1">Sei carina </p>
+              <p class="p1">Fantastica <span style="color: red !important;">💞</span></p>
+            </div>
+            <div class="paper">
+            <p class="p1">Trascina i documenti per spostarli!</p>
+            </div>
+            <spal>Ti amo in italiano</spal>
+        </div>
+    </div>
+
+    <!-- Modal para el regalo 4 -->
+    <div class="modal" id="giftModal4">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <audio id="backgroundMusic4" src="{% static 'miapp/audios/4.mp3' %}" preload="auto" playsinline webkit-playsinline></audio>
+            <div class="book-container">
+                <div class="envelope">
+                </div>
+                
+                <div class="card">
+                    <div class="back"></div>
+                    <div class="front">
+                        <div class="f-box">
+                            <img src="{% static 'miapp/images/portada.png' %}" alt="">
+                        </div>
+                    </div>
+                
+                    <div class="text-container page" id="page1" data-page="1">
+                        <img src="{% static 'miapp/images/mensaje1.jpeg' %}" alt="Imagen especial" class="special-image">
+                        <p class="love-message">Cada día a tu lado es una nueva página de nuestra hermosa historia de amor.</p>
+                        <button class="nav-button next-button" aria-label="Siguiente página">→</button>
+                    </div>
+
+                    <div class="text-container page" id="page2" data-page="2">
+                        <img src="{% static 'miapp/images/mensaje3.jpeg' %}" alt="Segunda imagen especial" class="special-image">
+                        <p class="love-message">En tus ojos encuentro el universo entero, y en tu sonrisa, mi felicidad completa.</p>
+                        <button class="nav-button prev-button" aria-label="Página anterior">←</button>
+                        <button class="nav-button next-button" aria-label="Siguiente página">→</button>
+                    </div>
+
+                    <div class="text-container page" id="page3" data-page="3">
+                        <img src="{% static 'miapp/images/mensaje4.jpeg' %}" alt="Tercera imagen especial" class="special-image">
+                        <p class="love-message">Eres el sueño que nunca supe que tenía, y ahora no puedo imaginar despertar sin ti.</p>
+                        <button class="nav-button prev-button" aria-label="Página anterior">←</button>
+                        <button class="nav-button next-button" aria-label="Siguiente página">→</button>
+                    </div>
+
+                    <div class="text-container page" id="page4" data-page="4">
+                        <img src="{% static 'miapp/images/mensaje5.jpeg' %}" alt="Cuarta imagen especial" class="special-image">
+                        <p class="love-message">Contigo cada momento ordinario se convierte en un recuerdo extraordinario.</p>
+                        <button class="nav-button prev-button" aria-label="Página anterior">←</button>
+                        <button class="nav-button next-button" aria-label="Siguiente página">→</button>
+                    </div>
+
+                    <div class="text-container page" id="page5" data-page="5">
+                        <img src="{% static 'miapp/images/mensaje6.jpeg' %}" alt="Quinta imagen especial" class="special-image">
+                        <p class="love-message">Tu amor es el refugio donde mi corazón encuentra paz y mi alma, libertad.</p>
+                        <button class="nav-button prev-button" aria-label="Página anterior">←</button>
+                        <button class="nav-button next-button" aria-label="Siguiente página">→</button>
+                    </div>
+
+                    <div class="text-container page" id="page6" data-page="6">
+                        <img src="{% static 'miapp/images/image.png' %}" alt="Sexta imagen especial" class="special-image">
+                        <p class="love-message">Eres la melodía que mi corazón canta cada mañana al despertar.</p>
+                        <button class="nav-button prev-button" aria-label="Página anterior">←</button>
+                        <button class="nav-button  next-button" aria-label="Siguiente página">→</button>
+                    </div>
+
+                    <div class="text-container page" id="page7" data-page="7">
+                        <div class="video-container">
+                            <video class="special-video" controls playsinline>
+                                <source src="{% static 'miapp/images/2.mp4' %}" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
+                        </div>
+                        <p class="love-message">Nuestro amor es como las estrellas: eterno, brillante y capaz de iluminar las noches más oscuras.</p>
+                        <button class="nav-button prev-button" aria-label="Página anterior">←</button>
+                        <button class="nav-button next-button" aria-label="Siguiente página">→</button>
+                    </div>
+
+                    <div class="text-container page" id="page8" data-page="8">
+                        <p class="love-message">Cada capítulo contigo es un poema de felicidad, cada página, un reflejo de lo que nuestro corazón sueña. 
+                            Espero que sigamos llenando este libro con aventuras, sonrisas, y momentos que nos recuerden lo especial que es este amor. 
+                            Nunca dejemos de escribir, porque mientras estemos juntos, nuestra historia será infinita. Te amo con todo mi ser, mi princesa ❤️.</p>
+                        <button class="nav-button prev-button" aria-label="Página anterior">←</button>
+                    </div>
+                </div>
+            <spaj>Te amo en inglés, portugués, francés, español y en todos los idiomas que puedan existir ❤️.</spaj>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{% static 'miapp/js/script.js' %}"></script>
+    <script src="{% static 'miapp/js/heart-animation.js' %}"></script>
+</body>
+</html>
