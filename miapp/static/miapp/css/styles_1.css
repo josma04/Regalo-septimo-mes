@@ -643,7 +643,7 @@ animation-delay: 8765ms;
 .select-button {
   border: 2px solid #b45fff; /* Borde gris */
   color: #000000; /* Texto blanco */
-  text-shadow: 0 0 10px #e7cbff; 
+  text-shadow: 0 0 10px #e7cbff;
   font-style: italic;
   background: #b45fff; /* Fondo gris oscuro */
   transition: all 0.4s ease;
@@ -1073,10 +1073,16 @@ h1 {
 
 
 .pixel-message {
-  font-style: italic;
-  font-size: 2em;
-  color: #e7cbff; /* Texto blanco */
-  background: rgba(0, 0, 0, 0); /* Fondo transparente para el mensaje */
+    font-style: italic;
+    font-size: 1.8em;
+    text-align: justify;
+    color: #e7cbff;
+    background: rgba(0, 0, 0, 0);
+}
+
+.pixel-message p {
+    margin-bottom: 1.5em; /* Espacio entre párrafos */
+    line-height: 1.5; /* Mejor espaciado entre líneas */
 }
 
 .background-pixelart {
@@ -1111,9 +1117,11 @@ h1 {
 }
 
 .pixel-message-container {
-  margin-top: 10px; /* Reducido el espacio entre el marco y el mensaje */
-  padding: 10px 20px; /* Ajustado el padding del contenedor del mensaje */
-  color: #FFFFFF;
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: #FFFFFF;
+    max-height: 70vh; /* Altura máxima */
+    overflow-y: auto; /* Permite scroll si el contenido es muy largo */
 }
 
 .frame-message {
@@ -1132,14 +1140,16 @@ h1 {
 }
 
 .mensaje-regalo {
-  position: fixed;
-  top: 20px;
-  left: 47%;
-  transform: translateX(-50%);
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  color: #d3a0ff;
-  text-shadow: 0 0 10px rgba(211, 160, 255, 0.5);
-  z-index: 5;
-  animation: floatMessage 3s ease-in-out infinite, appearMessage 1s ease-out;
+    position: fixed;
+    top: 20px; /* Posición superior ajustada */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 90%; /* Limita el ancho máximo */
+    text-align: center; /* Asegura que el texto esté centrado */
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: #d3a0ff;
+    text-shadow: 0 0 10px rgba(211, 160, 255, 0.5);
+    z-index: 5;
+    animation: floatMessage 3s ease-in-out infinite, appearMessage 1s ease-out;
 }

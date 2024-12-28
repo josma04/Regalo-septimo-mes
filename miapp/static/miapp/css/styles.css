@@ -14,7 +14,7 @@ body {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    top: 0; 
+    top: 0;
     left: 0;
 }
 
@@ -23,7 +23,7 @@ canvas {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; 
+    height: 100%;
 }
 
 #stars {
@@ -271,17 +271,17 @@ svg path#line {
         top: 25%;
         left: 10%;
     }
-    
+
     .gift-2 {
         top: 25%;
         right: 10%;
     }
-    
+
     .gift-3 {
         bottom: 25%;
         left: 10%;
     }
-    
+
     .gift-4 {
         bottom: 25%;
         right: 10%;
@@ -293,22 +293,22 @@ svg path#line {
         width: 80px;
         height: 80px;
     }
-    
+
     .gift-1 {
         top: 20%;
         left: 5%;
     }
-    
+
     .gift-2 {
         top: 20%;
         right: 5%;
     }
-    
+
     .gift-3 {
         bottom: 20%;
         left: 5%;
     }
-    
+
     .gift-4 {
         bottom: 20%;
         right: 5%;
@@ -456,8 +456,8 @@ svg path#line {
     max-width: 800px;
     min-height: 90vh; /* Cambiamos height por min-height */
     border-radius: 15px;
-    border: 2px solid #d3a0ff;
-    box-shadow: 0 0 30px #d3a0ff;
+    border: 2px solid hsla(220, 80%, 80%, 1);
+    box-shadow: 0 0 30px hsla(220, 80%, 80%, 1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -477,19 +477,20 @@ svg path#line {
     top: 10px; /* Ajusta según sea necesario */
     right: 15px; /* Ajusta según sea necesario */
     font-size: 2rem;
-    color: #e7cbff; /* Color blanco */
+    color: hsla(220, 80%, 70%, 1); /* Color blanco */
     cursor: pointer;
     transition: transform 0.3s ease;
     background: rgba(0, 0, 0, 0.95); /* Fondo negro */
-    border: 2px solid #b45fff; /* Borde gris */
+    border: 2px solid hsla(220, 80%, 80%, 1); /* Borde gris */
+    box-shadow: hsla(220, 80%, 80%, 1);
     padding: 5px 10px; /* Espaciado alrededor del símbolo */
     border-radius: 10%; /* Hacerlo circular */
   }
-  
+
   .close-modal:hover {
     transform: rotate(90deg);
     background: #666666; /* Cambio de color al pasar el mouse */
-    box-shadow: 0 0 20px #999999; /* Efecto de sombra para resaltarlo */
+    box-shadow: 0 0 20px hsla(220, 80%, 80%, 1); /* Efecto de sombra para resaltarlo */
   }
 
   spak {
@@ -501,7 +502,7 @@ svg path#line {
     display: inline-block;
     text-align: left;
     position: absolute;
-    color: #d3a0ff;
+    color: hsla(220, 80%, 80%, 1);
     opacity: 1;
     font-style: italic;
     text-shadow: 0 0 5px rgba(211, 160, 255, 0.5);
@@ -545,7 +546,7 @@ svg path#line {
     --fo-color: #f9f9f9;
     --fi-color: #e2e2e2;
   }
-  
+
   /* Estilos generales del sobre */
   .envelop {
     position: relative;
@@ -554,27 +555,27 @@ svg path#line {
     margin: auto;
     overflow: visible;
 }
-  
+
   @media (min-width: 400px) and (max-width: 600px) {
     .envelop {
       width: 20rem;
       height: 15rem;
     }
   }
-  
+
   @media (min-width: 600px) {
     .envelop {
       width: 25rem;
       height: 20rem;
     }
   }
-  
+
   @media (min-width: 600px) and (min-height: 600px) {
     .envelop {
       bottom: 20%;
     }
   }
-  
+
   .envelop__front-paper {
     width: 100%;
     height: 100%;
@@ -587,7 +588,7 @@ svg path#line {
     clip-path: polygon(100% 0%, 50% 70%, 0% 0%, 0% 100%, 100% 100%);
     z-index: 300;
   }
-  
+
   .envelop__back-paper {
     width: 100%;
     height: 100%;
@@ -599,7 +600,7 @@ svg path#line {
     clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 90%);
     z-index: 100;
   }
-  
+
   .envelop__up-paper {
     width: 100%;
     height: 100%;
@@ -611,7 +612,7 @@ svg path#line {
     z-index: 400;
     clip-path: polygon(0% 0%, 100% 0%, 50% 81%);
   }
-  
+
   .envelop__sticker {
     width: 100%;
     height: 20%;
@@ -628,7 +629,7 @@ svg path#line {
     background-size: 2rem;
     background-position: center;
   }
-  
+
   .envelop__false-sticker {
     width: 20%;
     height: 20%;
@@ -645,21 +646,21 @@ svg path#line {
     background-size: 2rem;
     background-position: center;
   }
-  
+
   @media (max-width: 400px) {
     .envelop__sticker,
     .envelop__false-sticker {
       background-size: 1.2rem;
     }
   }
-  
+
   @media (min-width: 600px) {
     .envelop__sticker,
     .envelop__false-sticker {
       height: 15%;
     }
   }
-  
+
   .envelop__content {
     width: 100%;
     height: 100%;
@@ -677,7 +678,7 @@ svg path#line {
     overflow: visible;
     height: 100%; /* Mantenemos altura fija */
 }
-  
+
 .love-notes {
     width: 100%;
     height: 100%;
@@ -716,43 +717,43 @@ svg path#line {
 .note:nth-child(3) {
     bottom: 20%;
 }
-  
+
   .note:hover {
     cursor: pointer;
     height: 45%;
   }
-  
+
   .note__text {
     font-family: "Sofia";
     padding: 1rem;
   }
-  
+
   .note__text p {
     font-size: 0.9rem;
     margin-bottom: 1rem;
     text-align: center;
   }
-  
+
   @media (min-width: 300px) and (max-width: 600px) {
     .note__text p {
       font-size: 1.025rem;
     }
   }
-  
+
   @media (min-width: 600px) {
     .note__text p {
       font-size: 1.15rem;
     }
   }
-  
+
   .scissors {
     cursor: url("https://i.postimg.cc/GtLCdKxR/sisors.png"), pointer;
   }
-  
+
   .scissors:active {
     cursor: url("https://i.postimg.cc/GtXQ7WPZ/pngwing-com.png"), pointer;
   }
-  
+
   .cursor {
     cursor: pointer;
   }
@@ -765,7 +766,7 @@ svg path#line {
     padding: 40px;
     position: relative;
 }
-  
+
   #giftModal1 .close-modal:hover {
     transform: rotate(90deg);
     background: #666666; /* Cambio de color al pasar el mouse */
@@ -793,7 +794,7 @@ svg path#line {
     }
     85% {
         transform: scale(1);
-    }   
+    }
 }
 
 .wrapper {
@@ -825,7 +826,7 @@ svg path#line {
     text-align: center;
     transition: all 1s ease;
     font-family: 'Shadows Into Light';
-    color: #d3a0ff;
+    color: hsla(220, 80%, 80%, 1);
 }
 
 #giftModal1 label {
@@ -900,7 +901,7 @@ svg path#line {
     display: inline-block;
     text-align: left;
     position: absolute;
-    color: #d3a0ff;
+    color: hsla(220, 80%, 80%, 1);
     opacity: 1;
     font-style: italic;
     text-shadow: 0 0 5px rgba(211, 160, 255, 0.5);
@@ -916,7 +917,7 @@ svg path#line {
     display: inline-block;
     text-align: left;
     position: absolute;
-    color: #d3a0ff;
+    color: hsla(220, 80%, 80%, 1);
     opacity: 0;
     font-style: italic;
     text-shadow: 0 0 5px rgba(211, 160, 255, 0.5);
@@ -1001,16 +1002,16 @@ svg path#line {
         padding: 10px 50px;
         max-width: 200px;
     }
-    
+
     #giftModal3 .paper.heart {
         width: 150px;
         height: 150px;
     }
-    
+
     #giftModal3 .paper.image p {
         font-size: 24px;
     }
-    
+
     #giftModal3 p {
         font-size: 36px;
     }
@@ -1025,7 +1026,7 @@ spal {
     display: inline-block;
     text-align: left;
     position: absolute;
-    color: #d3a0ff;
+    color: hsla(220, 80%, 80%, 1);
     opacity: 1;
     font-style: italic;
     text-shadow: 0 0 5px rgba(211, 160, 255, 0.5);
@@ -1118,7 +1119,7 @@ spal {
   .envelope {
     width: 380px;
 }
-  
+
   .card {
     height: 330px;
     width: 230px;
@@ -1327,7 +1328,7 @@ spal {
     filter: none; /* Elimina cualquier filtro que pueda estar afectando */
     -webkit-filter: none;
     mix-blend-mode: normal; /* Asegura que no haya mezcla de colores */
-    isolation: isolate; 
+    isolation: isolate;
 }
 
 /* Asegurarse de que el video se ajuste bien en móviles */
@@ -1387,7 +1388,7 @@ spaj {
     display: inline-block;
     text-align: left;
     position: absolute;
-    color: #d3a0ff;
+    color: hsla(220, 80%, 80%, 1);
     opacity: 0;
     font-style: italic;
     text-shadow: 0 0 5px rgba(211, 160, 255, 0.5);

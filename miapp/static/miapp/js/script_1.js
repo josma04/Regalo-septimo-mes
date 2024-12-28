@@ -3,20 +3,20 @@ function createPixelArt() {
     const ctx = canvas.getContext('2d');
     const pixelSize = 2;
     const img = new Image();
-    
+
     // Add white frame before image starts drawing
     const frameDiv = document.createElement('div');
     frameDiv.className = 'frame-decoration';
     document.querySelector('.pixel-art-container').appendChild(frameDiv);
-    
+
     // Initialize audio
     const audio = new Audio('/static/miapp/audios/music.mp3');
     audio.loop = true;
-    
+
     img.onload = function() {
         // Start playing audio when image loads
         audio.play().catch(e => console.log('Audio autoplay prevented:', e));
-        
+
         const modalWidth = document.querySelector('.pixel-art-content').offsetWidth * 0.6;
         const scale = modalWidth / img.width;
         canvas.width = img.width * scale;
@@ -27,12 +27,12 @@ function createPixelArt() {
         tempCanvas.width = canvas.width;
         tempCanvas.height = canvas.height;
         tempCtx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        
+
         // Apply rounded corners to the context
         ctx.beginPath();
         ctx.roundRect(0, 0, canvas.width, canvas.height, 15);
         ctx.clip();
-        
+
         const imageData = tempCtx.getImageData(0, 0, canvas.width, canvas.height);
         const pixels = imageData.data;
         let x = 0;
@@ -67,26 +67,52 @@ function createPixelArt() {
 }
 
 function showPixelMessage() {
-    const message = "I am lucky to have you in my life ❤️.";
+    const message = "Hola mi amorcito, ya son siete meses. Increíble, ¿no? Quién iba a pensar que podríamos construir algo tan puro e ineflable. Quisiera dedicarte algunas de las palabras que salen desde lo más profundo de mí:\n\n" +
+    "En estos siete meses de tenerte a mi lado, cada día me enamoro más de esa maravillosa espontaneidad que te hace única. Tu carisma ilumina hasta los momentos más simples, convirtiendo cada instante juntos en algo mágico y especial. No hay palabras suficientes para expresar lo que significas para mí, pero seguiré intentando describírtelo a lo largo de este mensajito.\n\n" +
+    "Conoces bien que existe un hilo rojo invisible que une a las almas destinadas, pero lo más hermoso de nuestra historia es cómo ese hilo nos fue acercando poco a poco, como una danza delicada del destino. Durante dos años, el universo nos mantuvo cerca, compartiendo espacios, cruzando caminos, rodeados de las mismas personas, pero esperando el momento perfecto para que nuestros corazones estuvieran listos para reconocerse. Ahora entiendo por qué teníamos que esperar. Cada encuentro casual, cada momento en que estuvimos cerca sin saberlo, cada instante que pasó antes de que nuestros ojos realmente se encontraran, era parte de una hermosa coreografía del destino. El hilo rojo no solo nos conectaba, nos estaba preparando para el amor más profundo y verdadero. Cuando finalmente el momento llegó, cuando nuestros corazones estuvieron listos, fue como si todas las estrellas del universo se alinearan. No fue un flechazo instantáneo de amor como en la mayoría de ocasiones, fue un despertar, un reconocimiento de almas que siempre estuvieron destinadas a encontrarse. Cada día a tu lado me confirma que el tiempo que pasamos cerca sin estar juntos no fue en vano. Era el tiempo puliendo nuestras personalidades, preparándonos para este amor que ahora compartimos. Tu espontaneidad, tu carisma, tu forma única de ser, tu belleza, etc, todo eso siempre estuvo ahí, esperando el momento perfecto para entrar en mi vida y transformarla para siempre.\n\n" +
+    "¿Sabes qué es lo más hermoso de nuestras noches compartiendo papas locas? No es solo la comida, es la magia que creamos juntos. Es ver cómo tus ojos brillan mientras decidimos qué serie ver, es sentir tu cabecita recostada en mi hombro, es escuchar tu risa cuando algo te divierte. Son esos momentos aparentemente simples los que se han convertido en los tesoros más preciados de mi corazón. En esos momentos, el mundo entero se reduce a nosotros dos, y no necesito nada más para ser completamente feliz.\n\n" +
+    "Sé bien que en estos siete meses hemos enfrentado tanto momentos dulces como desafiantes, y cada uno de ellos ha servido para fortalecer este amor tan bonito que tenemos. Cada prueba que hemos enfrentado, cada obstáculo que hemos superado, cada lágrima y cada sonrisa han sido piedras preciosas que construyen nuestro camino juntos. Por superar de buena forma las diferentes situaciones, cada día estoy más convencido de que este amor está destinado a la eternidad. No es solo un presentimiento, es una certeza que siento en cada latido de mi corazón. Gracias una vez más por estos siete meses de amor puro y verdadero. Gracias por ser esa luz que ilumina mis días, por tu comprensión, por tu amor incondicional.\n\n" +
+    "Perdóname por aquellas ocasiones en las que me he comportado mal y no he hecho lo que se debería. Pero ten la seguridad que estoy trabajando en eso para ofrecerte lo mejor que tengo, y con ello, hacerte feliz y enamorarte cada día más. Muchas gracias porque me haces querer ser mejor cada día, me inspiras a crecer, a soñar más alto, a ser el hombre que mereces tener a tu lado. Contigo he aprendido que el amor verdadero no solo se forma o demuestra en los momentos felices, sino también en los que son incómodos y complicados, esos son los que nos hacen crecer juntos, y los que definen lo que somos como equipo. Eres lo mejor que tengo, mi mayor tesoro, la bendición más hermosa que la vida me ha regalado.\n\n" +
+    "Quiero que sepas que cuando pienso en nosotros, en nuestro futuro, mi corazón se llena de una emoción indescriptible. Imagino miles de días más comiendo cosas ricas, culeando como nos gusta, con millones de risas e infinitos momentos donde tu espontaneidad me sorprenda y me enamore aún más de ti.\n\n" +
+    "Hay algo que me encanta demasiado de este amor lindo, y ese algo es que cada día me enamoro de una nueva faceta tuya, de un nuevo detalle que antes no había notado, de cualquier mínima cualidad que venga de ti. Gracias por ser ese regalo con el que me quedaré por siempre. Gracias por ser mi compañera, mi confidente, mi amor, mi todo. Eres lo mejor que tengo, el tesoro más valioso que la vida me ha regalado, y todas las cosas y palabras lindas que puedas imaginar.\n\n" +
+    "Te amo con una intensidad que las palabras no pueden describir mi negrita preciosa, pero que espero que con este mensajito puedas hacerte una pequeña idea de lo que siento por el amor de mi vida. Que estos siete meses sean solo el comienzo de nuestra historia de amor eterna, una historia que el destino escribió con hilos rojos que nos unían en el momento preciso, y que nosotros pintamos cada día con los colores más hermosos del amor.\n\n" +
+    "Sigue disfrutando de todas las sorpresas que este sitio web tiene para ti. Te amo, amor de mi única vida ❤️.";
     const messageContainer = document.getElementById('pixelMessage');
     const canvas = document.getElementById('pixelCanvas');
     const messageContainerParent = document.getElementById('pixelMessageContainer');
     messageContainerParent.style.width = `${canvas.width}px`;
-    const frameMessage = "Si el universo se destruyera, mi amor por ti perduraría ❤️";
+    const frameMessage = "Si el universo se destruyera, mi amor por ti perduraría ❤️.";
     const frameMessageElement = document.getElementById('frameMessage');
 
     let index = 0;
 
+    // Dividir el mensaje en párrafos
+    const paragraphs = message.split('\n\n');
+    let currentParagraph = 0;
+    let charIndex = 0;
+    let currentP = document.createElement('p');
+    messageContainer.appendChild(currentP);
 
     function displayNextCharacter() {
-        if (index < message.length) {
-            setTimeout(() => {
-                frameMessageElement.textContent = frameMessage;
-                frameMessageElement.style.opacity = '1';
-            });
-            messageContainer.textContent += message.charAt(index);
-            index++;
-            setTimeout(displayNextCharacter, 100);
+        if (currentParagraph < paragraphs.length) {
+            if (charIndex < paragraphs[currentParagraph].length) {
+                setTimeout(() => {
+                    frameMessageElement.textContent = frameMessage;
+                    frameMessageElement.style.opacity = '1';
+                });
+
+                currentP.textContent += paragraphs[currentParagraph].charAt(charIndex);
+                charIndex++;
+                setTimeout(displayNextCharacter, 100);
+            } else {
+                currentParagraph++;
+                charIndex = 0;
+                if (currentParagraph < paragraphs.length) {
+                    currentP = document.createElement('p');
+                    messageContainer.appendChild(currentP);
+                    setTimeout(displayNextCharacter, 100);
+                }
+            }
         }
     }
 
@@ -97,12 +123,12 @@ function closePixelArt() {
     const modal = document.getElementById('pixelArtModal');
     const canvas = document.getElementById('pixelCanvas');
     const audio = document.querySelector('audio');
-    
+
     if (audio) {
         audio.pause();
         audio.currentTime = 0;
     }
-    
+
     modal.style.display = 'none';
 
     const backgroundCanvas = canvas.cloneNode(true);
@@ -117,13 +143,13 @@ let currentUser = '';
 
 function showLogin(user) {
     currentUser = user;
-    
+
     if (user === 'marian') {
         // Primero mostramos el modal con la imagen pixel art
         const modal = document.getElementById('pixelArtModal');
         modal.style.display = 'block';
         createPixelArt();
-        
+
         // Configuramos el login pero aún no lo mostramos
         document.getElementById('loginTitle').textContent = '¡Bienvenida mi negrita hermosa! ❤️';
         document.getElementById('usernameHint').textContent = 'Tu usuario es el apodo que tiene tu hombre para ti  en WhatsApp y el número del día en que cumplimos mes (escribelo todo en minusculas y sin espacios)';
@@ -140,7 +166,7 @@ function validateForm(event) {
     event.preventDefault();
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    
+
     if (currentUser === 'marian') {
         if (username === 'negrettamia23' && password === '22032024') {
             window.location.href = '/home/';
@@ -563,7 +589,7 @@ function initializeLoveMessages() {
 
         // Forzar el reflow
         message.offsetHeight;
-       
+
         // Hacer visible el mensaje
         message.style.opacity = '1';
 
